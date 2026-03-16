@@ -1,49 +1,49 @@
-1. Introduction
-This repository contains a modular and scalable API automation framework built with Java, Rest-Assured, TestNG, and Allure Reporting. 
-It targets the Reqres public API and validates user management workflows including creation, update, retrieval, and deletion.
+1. Summary
+This project includes a flexible and well-structured API automation framework developed using Java,
+Rest-Assured, TestNG, and Allure Reporting.
+The framework is designed to test the Reqres public API by verifying
+user management operations such as creating, updating, retrieving, and deleting users.
 
-2. Developing frameworks
-Java - OpenJDK 21.0.1
-Rest-Assured - 5.5.6
-TestNG - 7.11.0
-Allure Reporting
-Maven
-IntelliJ IDEA 
+2. Framework Development Tools
+Java (OpenJDK 22.0.1) used as the main programming language.
+Maven for project dependency management and build automation.
+IntelliJ IDEA used as the development environment (IDE).
+Rest-Assured (5.5.6) for building and executing API test requests.
+TestNG (7.11.0) for managing test execution and organizing test cases.
+Allure Reporting (2.29.1) for generating comprehensive test reports.
 
-3. Project structure
-src/
-├── main/
-│   └── java/
-│       ├── models/                 # DTOs for request and response
-│       ├── services/              # API request methods
-│       └── RestAssuredConfigurations.java
-├── test/
-│   ├── java/
-│   │   ├── tests/                 # Test classes
-│   │   └── data/Utils/           # JSON reader utility
-│   └── resources/                # Test data files (JSON)
-│   └── testNg.xml                # TestNG suite configuration
+3. Project Hierarchy
+a)The project is organized under the src directory, which is divided into main and test sections.
+b)The main/java folder contains the core framework code.
+c)Inside main/java, the models package stores Data Transfer Object. classes used for API request and response bodies.
+d)The services package contains the methods responsible for sending API requests and handling responses.
+e)The RestAssuredConfigurations.java file manages the configuration settings for Rest-Assured.
+f)The test/java folder contains the automation test code.
+g)Within this folder, the tests package includes the API test classes.
+h)The data/Utils package provides utilities such as reading JSON test data.
+i)The resources folder stores JSON files used as test data during execution.
+j)The testNg.xml file defines the TestNG suite configuration used to run and organize the tests.
 
 4. Features
-Create, update, retrieve, and delete users via Reqres API
-
-Data-driven testing using external JSON files
-
-Centralized request configuration via RestAssuredConfigurations
-
-Clean DTO separation: UserRequest for payloads, Users for responses
-
-Allure integration for rich test reporting
+a)Supports user lifecycle operations through the Reqres API, including creating,
+updating, retrieving, and deleting users.
+b)Implements data-driven testing by reading input data from external JSON files.
+c)Uses a centralized configuration class (RestAssuredConfigurations) to
+manage common Rest-Assured settings for all API requests.
+d)Maintains clear separation of data objects by using UserRequest for request payloads and Users for API responses.
+e)Integrates Allure Reporting to generate detailed and visually rich test execution reports.
 
 5. How to Run Tests
-Install Allure CLI (via Scoop or npm)
-Run tests using TestNG suite:mvn test -DsuiteXmlFile="src/test/resources/testNg.xml"
+Install Allure Command Line Interface Through terminal Using (npm)
+Or
+Using TestNg To Run Test Cases:mvn test -DsuiteXmlFile="src/test/resources/testNg.xml"
 
-6. To generate the report
-Run through terminal: 
-allure generate ./allure-results -o ./allure-report
-allure open ./allure-report
+6.Generating the Report
+Open the terminal in the project directory.
+Run the following command to generate the Allure report from the test results:
+a) allure generate ./allure-results -o ./allure-report
+After the report is created, open it using the following command:
+b)allure open ./allure-report
 
-Moustafa
 
 
