@@ -1,6 +1,6 @@
 package tests;
 
-import configs.RestAssuredConfigurations;
+import configs.Configs;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 
@@ -9,12 +9,12 @@ public class TestBase
     @BeforeSuite
     public void setUp()
     {
-        new RestAssuredConfigurations();
+        new Configs();
     }
 
 
     @AfterSuite
-    public static void tearDown()
+    public void tearDown()
     {
         System.out.println("=== Test Suite Finished ===");
     }

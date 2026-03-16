@@ -3,7 +3,7 @@ package models;
 import io.qameta.allure.internal.shadowed.jackson.annotation.JsonProperty;
 
 // Class to represent the JSON request body for the User API
-public class UserRequestPayload
+public class Payload
 {
     //Encapsulates the fields that sending to the server
     @JsonProperty("name")
@@ -12,9 +12,9 @@ public class UserRequestPayload
     private String job;
 
 
-    public UserRequestPayload() {}
+    public Payload() {}
 
-    public UserRequestPayload(String name, String job)
+    public Payload(String name, String job)
     {
         this.name = name;
         this.job  = job;

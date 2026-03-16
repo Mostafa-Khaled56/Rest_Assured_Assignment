@@ -3,7 +3,7 @@
 
     <test name="UserApiRequestsTests">
         <classes>
-            <class name="tests.UserApiRequestsTests" />
+            <class name="tests.Tests" />
         </classes>
     </test>
 </suite>

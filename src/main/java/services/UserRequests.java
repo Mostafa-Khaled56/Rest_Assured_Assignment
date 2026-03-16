@@ -1,29 +1,28 @@
 package services;
 
-import io.restassured.response.Response;
-import models.UserRequestPayload;
-import models.UsersResponseBody;
+import models.Payload;
+import models.Response;
 
 import static io.restassured.RestAssured.given;
 
-public class UserApiRequests
+public class UserRequests
 {
-    public UsersResponseBody addNewUser(String name, String job)
+    public Response addNewUser(String name, String job)
     {
         return given()
                 .contentType("application/json")
-                .body(new UserRequestPayload(name, job))
+                .body(new Payload(name, job))
                 .when()
                 .post()
                 .then()
                 .statusCode(201)
                 .extract()
-                .as(UsersResponseBody.class);
+                .as(Response.class);
     }
 
-    public UsersResponseBody updateUser(String id, String name, String newJob)
+    public Response updateUser(String id, String name, String newJob)
     {
-        UserRequestPayload updatedUser = new UserRequestPayload(name, newJob);
+        Payload updatedUser = new Payload(name, newJob);
         return given()
                 .contentType("application/json")
                 .body(updatedUser)
@@ -32,22 +31,22 @@ public class UserApiRequests
                 .then()
                 .statusCode(200)
                 .extract()
-                .as(UsersResponseBody.class);
+                .as(Response.class);
     }
 
-    public UsersResponseBody getUser(String id) {
+    public Response getUser(String id) {
         return given()
                 .when()
                 .get("/{id}", id)
                 .then()
                 .extract()
-                .as(UsersResponseBody.class);
+                .as(Response.class);
     }
 
 
     public boolean deleteUser(String id)
     {
-        Response response = given()
+        io.restassured.response.Response response = given()
                 .when()
                 .delete("/{id}", id)
                 .then()

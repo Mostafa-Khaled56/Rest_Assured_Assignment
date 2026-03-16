@@ -4,13 +4,13 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 // Class to handle the received response
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class UsersResponseBody {
+public class Response {
     private String name;
     private String job;
     private String id;
     private String createdAt;
 
-    public UsersResponseBody()
+    public Response()
     {
         // Required for JSON deserialization by Jackson
     }
