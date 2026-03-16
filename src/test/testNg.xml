@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Api automation task">
+
+    <test name="UserApiRequestsTests">
+        <classes>
+            <class name="tests.UserApiRequestsTests" />
+        </classes>
+    </test>
+</suite>

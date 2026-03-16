@@ -1,0 +1,47 @@
+1. Introduction
+This repository contains a modular and scalable API automation framework built with Java, Rest-Assured, TestNG, and Allure Reporting. 
+It targets the Reqres public API and validates user management workflows including creation, update, retrieval, and deletion.
+
+2. Developing frameworks
+Java - OpenJDK 21.0.1
+Rest-Assured - 5.5.6
+TestNG - 7.11.0
+Allure Reporting
+Maven
+IntelliJ IDEA 
+
+3. Project structure
+src/
+├── main/
+│   └── java/
+│       ├── models/                 # DTOs for request and response
+│       ├── services/              # API request methods
+│       └── RestAssuredConfigurations.java
+├── test/
+│   ├── java/
+│   │   ├── tests/                 # Test classes
+│   │   └── data/Utils/           # JSON reader utility
+│   └── resources/                # Test data files (JSON)
+│   └── testNg.xml                # TestNG suite configuration
+
+4. Features
+Create, update, retrieve, and delete users via Reqres API
+
+Data-driven testing using external JSON files
+
+Centralized request configuration via RestAssuredConfigurations
+
+Clean DTO separation: UserRequest for payloads, Users for responses
+
+Allure integration for rich test reporting
+
+5. How to Run Tests
+Install Allure CLI (via Scoop or npm)
+Run tests using TestNG suite:mvn test -DsuiteXmlFile="src/test/resources/testNg.xml"
+
+6. To generate the report
+Run through terminal: 
+allure generate allure-results --clean -o allure-report
+allure open allure-report
+
+
